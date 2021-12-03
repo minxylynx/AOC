@@ -1,4 +1,4 @@
-package year2021.day3
+package year2021.day03
 
 import fromBinary
 import readInput
@@ -33,18 +33,7 @@ fun main() {
         return ogrInt * co2Int
     }
 
-    val input = readInput("year2021/day3/Day03")
+    val input = readInput(2021, "03")
     println(part1(input))
     println(part2(input))
 }
-
-///001100100101
-//110011011010
-//805
-//3290
-//2648450
-//[001101001000]
-//[110100111000]
-//840
-//3384
-//2845944

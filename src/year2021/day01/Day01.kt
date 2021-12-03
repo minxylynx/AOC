@@ -1,4 +1,4 @@
-package year2021.day1
+package year2021.day01
 
 import readInput
 
@@ -18,7 +18,7 @@ fun main() {
             .count { it[1] > it[0] }
     }
 
-    val input = readInput("year2021/day1/Day01")
+    val input = readInput(2021, "01")
     println(part1(input))
     println(part2(input))
 }

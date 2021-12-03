@@ -1,4 +1,4 @@
-package year2021.day2
+package year2021.day02
 
 import readInput
 
@@ -39,7 +39,7 @@ fun main() {
         return hor * vert
     }
 
-    val input = readInput("year2021/day2/Day02")
+    val input = readInput(2021, "02")
     println(part1(input))
     println(part2(input))
 }
