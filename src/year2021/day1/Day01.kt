@@ -1,4 +1,4 @@
-package day1
+package year2021.day1
 
 import readInput
 
@@ -6,25 +6,19 @@ import readInput
 
 fun main() {
     fun part1(input: List<String>): Int {
-
-        val size = input
+        return input
             .map { it.toInt() }
             .windowed(2).count { it[1] > it[0] }
-
-        println(size)
-        return size
     }
 
     fun part2(input: List<String>): Int {
-        val windowed = input.map { it.toInt() }
+        return input.map { it.toInt() }
             .windowed(3) { it.sum() }
             .windowed(2)
             .count { it[1] > it[0] }
-        println(windowed)
-        return windowed
     }
 
-    val input = readInput("day1/Day01")
+    val input = readInput("year2021/day1/Day01")
     println(part1(input))
     println(part2(input))
 }
