@@ -1,4 +1,4 @@
-package year2021.day5
+package year2021.day06
 
 import readInput
 
@@ -11,7 +11,7 @@ fun main() {
         return input.size
     }
 
-    val input = readInput(2021, "05")
+    val input = readInput(2021, "06")
     println(part1(input))
     println(part2(input))
 }
