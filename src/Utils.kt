@@ -13,3 +13,5 @@ fun readInput(year: Int, day: String, addl: String = "") = File("src/year$year",
 fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray())).toString(16)
 
 fun List<Char>.fromBinary() = this.joinToString("").toInt(2)
+
+fun List<String>.splitToInt(splitter: String) = this.map { line -> line.split(splitter).map { it.toInt() } }
