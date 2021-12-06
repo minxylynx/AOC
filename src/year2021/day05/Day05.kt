@@ -3,6 +3,11 @@ package year2021.day05
 import readInput
 import kotlin.math.abs
 
+/*
+ https://adventofcode.com/2021/day/5
+ */
+
+
 data class Coord(val x: Int, val y: Int)
 
 fun String.toXY() = this.split(",").let { Coord(it.first().toInt(), it.last().toInt()) }

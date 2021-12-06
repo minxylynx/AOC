@@ -3,6 +3,11 @@ package year2021.day06
 import readInput
 import splitToInt
 
+/*
+ https://adventofcode.com/2021/day/6
+ */
+
+
 fun List<Int>.countFish(days: Int) =
     LongArray(9)
         .also { array -> this.groupingBy { it }.eachCount().map { array[it.key] = it.value.toLong() } }

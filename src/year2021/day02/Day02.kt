@@ -2,6 +2,11 @@ package year2021.day02
 
 import readInput
 
+/*
+ https://adventofcode.com/2021/day/2
+ */
+
+
 fun main() {
     fun part1(input: List<String>): Int {
 

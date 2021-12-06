@@ -2,6 +2,12 @@ package year2021.day04
 
 import readInput
 
+/*
+ https://adventofcode.com/2021/day/4
+ */
+
+
+
 data class Space(
     val rowIdx: Int,
     var colIdx: Int = 0,

@@ -3,6 +3,11 @@ package year2021.day03
 import fromBinary
 import readInput
 
+/*
+ https://adventofcode.com/2021/day/3
+ */
+
+
 fun main() {
     fun part1(input: List<String>): Int {
         val pairs = IntRange(0, input[0].length - 1).map { i ->
