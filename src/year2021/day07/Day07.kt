@@ -6,7 +6,6 @@ import kotlin.math.abs
 import kotlin.math.floor
 import kotlin.math.roundToInt
 
-
 //  https://adventofcode.com/2021/day/7
 
 fun Array<Int>.fuelUse(endPoint: Int) =
@@ -23,7 +22,7 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        val array = input.splitToInt(",").flatten().toTypedArray().sortedArray()
+        val array = input.splitToInt(",").flatten().toTypedArray()
         val avg = array.average()
         return minOf(array.fuelUse(floor(avg).toInt()), array.fuelUse(avg.roundToInt()))
     }
