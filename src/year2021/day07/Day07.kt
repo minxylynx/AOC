@@ -3,8 +3,8 @@ package year2021.day07
 import readInput
 import splitToInt
 import kotlin.math.abs
+import kotlin.math.ceil
 import kotlin.math.floor
-import kotlin.math.roundToInt
 
 //  https://adventofcode.com/2021/day/7
 
@@ -24,7 +24,7 @@ fun main() {
     fun part2(input: List<String>): Int {
         val array = input.splitToInt(",").flatten().toTypedArray()
         val avg = array.average()
-        return minOf(array.fuelUse(floor(avg).toInt()), array.fuelUse(avg.roundToInt()))
+        return minOf(array.fuelUse(floor(avg).toInt()), array.fuelUse(ceil(avg).toInt()))
     }
 
     val input = readInput(2021, "07")
