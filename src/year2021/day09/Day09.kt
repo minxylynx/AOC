@@ -25,8 +25,8 @@ fun List<List<Int>>.findBasins(): List<Int> {
     fun findBasinExtent(listIdx: Int, lineIdx: Int): Int {
         if (listIdx < 0 || listIdx >= listSize || lineIdx < 0 || lineIdx >= lineSize // out of bounds check
             || truthMap[listIdx][lineIdx]  // record exists in the truth map
-            || this[listIdx][lineIdx] == 9
-        ) // equals 9 (discard those)
+            || this[listIdx][lineIdx] == 9 // equals 9 (discard those)
+        )
             return 0
         truthMap[listIdx][lineIdx] = true
         return 1 +
