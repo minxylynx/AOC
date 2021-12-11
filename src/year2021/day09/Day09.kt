@@ -1,5 +1,6 @@
 package year2021.day09
 
+import mapOnlyIntstoInts
 import readInput
 
 //  https://adventofcode.com/2021/day/9
@@ -47,12 +48,12 @@ fun List<List<Int>>.findBasins(): List<Int> {
 
 fun main() {
     fun part1(input: List<String>): Int {
-        val lows = input.map { line -> line.toList().map { it.toString().toInt() } }.findLows()
+        val lows = input.mapOnlyIntstoInts().findLows()
         return lows.fold(0) { sum, ele -> sum + (ele + 1) }
     }
 
     fun part2(input: List<String>): Int {
-        val basins = input.map { line -> line.toList().map { it.toString().toInt() } }.findBasins()
+        val basins = input.mapOnlyIntstoInts().findBasins()
         return basins.sortedDescending().take(3).reduce { product, ele -> product * ele }
     }
 

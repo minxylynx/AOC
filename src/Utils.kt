@@ -15,3 +15,7 @@ fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest
 fun List<Char>.fromBinary() = this.joinToString("").toInt(2)
 
 fun List<String>.splitToInt(splitter: String) = this.map { line -> line.split(splitter).map { it.toInt() } }
+
+fun List<String>.mapOnlyIntstoInts() = this.map { line -> line.toList().map { it.toString().toInt() } }
+
+fun List<String>.mapOnlyIntstoArray() = this.map { line -> line.toList().map { it.toString().toInt() }.toIntArray() }

@@ -1,12 +1,13 @@
 package year2021.day11
 
+import mapOnlyIntstoArray
 import readInput
 
 //  https://adventofcode.com/2021/day/11
 
 fun main() {
     fun part1(input: List<String>): Int {
-        var octos = input.map { line -> line.toList().map { it.toString().toInt() }.toIntArray() }.toTypedArray()
+        var octos = input.mapOnlyIntstoArray().toTypedArray()
         var flashCount = 0
         repeat(100) {
             octos.flashes().let {
@@ -18,7 +19,7 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        var octos = input.map { line -> line.toList().map { it.toString().toInt() }.toIntArray() }.toTypedArray()
+        var octos = input.mapOnlyIntstoArray().toTypedArray()
         var flashCount = 0
         var step = 0
         for (num in 1..1000) {
