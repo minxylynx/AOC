@@ -1,6 +1,7 @@
 package year2021.day12
 
 import readInput
+import kotlin.system.measureTimeMillis
 
 //  https://adventofcode.com/2021/day/12
 
@@ -39,8 +40,14 @@ fun main() {
     }
 
     val input = readInput(2021, "12")
-    println(part1(input))
-    println(part2(input))
+    val part1Time = measureTimeMillis {
+        println(part1(input))
+    }
+    val part2Time = measureTimeMillis {
+        println(part2(input))
+    }
+    println("part1 time to completion: $part1Time ms")
+    println("part2 time to completion: $part2Time ms")
 }
 
 fun String.isLowercase() = this.filter { it.isUpperCase() }.toList().isEmpty()

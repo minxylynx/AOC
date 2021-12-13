@@ -2,6 +2,7 @@ package year2021.day10
 
 import readInput
 import java.math.BigInteger
+import kotlin.system.measureTimeMillis
 
 //  https://adventofcode.com/2021/day/10
 
@@ -58,6 +59,12 @@ fun main() {
     }
 
     val input = readInput(2021, "10")
-    println(part1(input))
-    println(part2(input))
+    val part1Time = measureTimeMillis {
+        println(part1(input))
+    }
+    val part2Time = measureTimeMillis {
+        println(part2(input))
+    }
+    println("part1 time to completion: $part1Time ms")
+    println("part2 time to completion: $part2Time ms")
 }
