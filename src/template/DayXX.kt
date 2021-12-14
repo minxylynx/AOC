@@ -15,8 +15,6 @@ fun main() {
     }
 
     val input = readInput(2021, "XX")
-    val part1Time = measureTimeMillis { println(part1(input)) }
-    val part2Time = measureTimeMillis { println(part2(input)) }
-    println("part1 time to completion: $part1Time ms")
-    println("part2 time to completion: $part2Time ms")
+    measureTimeMillis { println(part1(input)) }.let { println("part1 time to completion: $it ms") }
+    measureTimeMillis { println(part2(input)) }.let { println("part2 time to completion: $it ms") }
 }

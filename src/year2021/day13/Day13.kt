@@ -42,10 +42,8 @@ fun main() {
 
     val dots = readInput(2021, "13", "_dots")
     val folds = readInput(2021, "13", "_folds")
-    val part1Time = measureTimeMillis { println(part1(dots, folds)) }
-    val part2Time = measureTimeMillis { println(part2(dots, folds)) }
-    println("part1 time to completion: $part1Time ms")
-    println("part2 time to completion: $part2Time ms")
+    measureTimeMillis { println(part1(dots, folds)) }.let { println("part1 time to completion: $it ms") }
+    measureTimeMillis { println(part2(dots, folds)) }.let { println("part2 time to completion: $it ms") }
 }
 
 fun  MutableList<Coord>.printMap() {
