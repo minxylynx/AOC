@@ -27,6 +27,9 @@ fun polymerize(input: List<String>, times: Int): Long {
     var polymer = initial.zip(initial.drop(1)) { a, b -> "$a$b" } // zip the start into pairs
         .groupingBy { it }.eachCount()
         .mapValues { it.value.toLong() } // group by pair and count
+    // We dont actually care about the pair, only about the first char of each pair, which is why this works
+    // We track the pair as seen in the string so we know what rule to apply, but counting only cares about the first
+    // char
     repeat(times) {
         polymer = buildMap {
             for ((pair, count) in polymer) { // for each pair
