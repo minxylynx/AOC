@@ -39,6 +39,7 @@ data class Packet(
         mutableListOf(this.version) + this.subPackets.map { it.getAllVersions() }.flatten()
 }
 
+// Process the header, which tells you if its a literal or an operator
 fun processHeader(binary: String): Packet {
     val packetVersion = binary.substring(0,3).parse()
     val idType = binary.substring(3,6).parse()
@@ -47,11 +48,14 @@ fun processHeader(binary: String): Packet {
         processLiteral(binary.substring(6), "", "").let { (str, lit) ->
             packet.packetStr += str
             packet.literal = lit
+            println(lit)
         }
         packet
     } else processOperator(binary.substring(6), packet)
 }
 
+// Process and operator according to the rules
+// Operators always have new packets underneath, so only out is a new header
 fun processOperator(binary: String, packet: Packet): Packet {
     when (binary.take(1)) {
         "0" -> {
@@ -78,10 +82,12 @@ fun processOperator(binary: String, packet: Packet): Packet {
             packet.packetStr += binary.substring(0, 12 + packet.subPacketSize())
         }
     }
-    packet.operate()
+    packet.operate().also { println(packet.literal) } // Once an operator is done adding subs, operate on it to get the literal
     return packet
 }
 
+// Process literals. The terminating object for nested operators
+// Returns the string of the whole literal object and the actual literal value
 fun processLiteral(binary: String, strBuild: String, literal: String): Pair<String, Long> =
     binary.take(5).let {
         val str = it.takeLast(4)
